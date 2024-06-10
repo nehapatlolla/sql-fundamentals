@@ -40,25 +40,25 @@ Most used Os is Linux
 
 distrose
 
-## scaling
+## Scaling
 
-Scaling, in simple terms, refers to the ability of a system, service, or application to handle an increasing amount of work or traffic as demand grows, without breaking or becoming slow or unstable.
+- Scaling, in simple terms, refers to the ability of a system, service, or application to handle an increasing amount of work or traffic as demand grows, without breaking or becoming slow or unstable.
 
-vertical scaling: More ram, CPU power,storage space, network bandwidth
+- vertical scaling: More ram, CPU power,storage space, network bandwidth
 
-Vertical scaling involves adding more resources (such as upgrading hardware components) to an existing system to increase its capacity
+- Vertical scaling involves adding more resources (such as upgrading hardware components) to an existing system to increase its capacity
 
-Horizontal: Adding more computers
+- Horizontal: Adding more computers
 
-Horizontal scaling involves adding more instances or copies of a system to distribute the workload across multiple machines.
+- Horizontal scaling involves adding more instances or copies of a system to distribute the workload across multiple machines.
 
-Offices uses which ever is cheaper.
+- Offices uses which ever is cheaper.
 
-The choice in the office between vertical and horizontal scaling depends on factors such as the nature of the workload, budget constraints, existing infrastructure, and scalability requirements.
+- The choice in the office between vertical and horizontal scaling depends on factors such as the nature of the workload, budget constraints, existing infrastructure, and scalability requirements.
 
 ### Autoscaling
 
-Autoscaling solves this problem by `automatically adjusting the number of servers ` or resources allocated to your website based on real-time demand. When traffic increases, autoscaling automatically adds more servers or resources to handle the load. And when traffic decreases, it removes unnecessary servers or resources to save costs.
+Autoscaling solves this problem by `automatically adjusting the number of servers  or resources` allocated to your website based on real-time demand. When traffic increases, autoscaling automatically adds more servers or resources to handle the load. And when traffic decreases, it removes unnecessary servers or resources to save costs.
 
 ### how will you go bankrupt, if autoscaling is on?
 
@@ -68,24 +68,41 @@ Identify ddos:
 
 1. filtering
 2. captcha
-3.
+3. ip address filtering
 
 Divert the flow
 
 ## Database why?
 
-ram is temporary , volatile
+Ram is temporary , volatile
 
-hard disk is permanent , slow
+Hard disk is permanent , slow
 
-if people are demanding the data more keep the copy in the ram.
+If people are demanding the data more keep the copy in the ram.
 
 In that case reading speed increases.
 
-if we open the game, it loads because, it copies the data from the hard disk to ram.
+If we open the game, it loads because, it copies the data from the hard disk to ram.
 
-Bottleneck is HDD
+Bottleneck is HDD (Hard disk)
 
-instead of the HDD people are using the SSD.
+Instead of the HDD people are using the SSD because hdd is slow.
 
 ![alt text](image.png)
+
+1. frequently asked it will have it in the ram
+2. Querying becomes easier
+3. CRUD : easy
+4. Backups are inbuilt
+5. Undo- easily(time limit)
+6. performance
+
+## SQL vs NO SQL
+
+| Relational (Tables with Rows and Columns)            | Columns) Various (Document, Key-Value, Columnar, Graph, etc.)                    |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Complex Queries, Transactions, Structured Data       | High Volume, High Velocity, Unstructured or Semi-Structured Data                 |
+| MySQL, PostgreSQL, SQL Server                        | MongoDB, Cassandra, Redis, Couchbase                                             |
+| ACID (Atomicity, Consistency, Isolation, Durability) | Eventual Consistency (May sacrifice consistency for performance and scalability) |
+
+![alt text](image-1.png)

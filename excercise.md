@@ -64,6 +64,8 @@ WHERE year <= 2003;
 
 ![alt text](image-4.png)
 
+Excercise 3
+
 1.Find all the Toy Story movies
 
 ```sql
@@ -89,3 +91,78 @@ select title from movies where title LIKE "WALL-%"
 ```
 
 ![alt text](image-5.png)
+
+Excercise 4
+
+1. List all directors of Pixar movies (alphabetically), without duplicates
+
+```sql
+
+SELECT DISTINCT director
+FROM movies
+ORDER BY director;
+```
+
+2. List the last four Pixar movies released (ordered from most recent to least)
+
+```sql
+SELECT *
+FROM movies
+order by year desc
+limit 4;
+```
+
+3. List the first five Pixar movies sorted alphabetically
+
+```sql
+SELECT *
+FROM movies
+order by title
+limit 5;
+```
+
+4. List the next five Pixar movies sorted alphabetically
+
+```sql
+SELECT *
+FROM movies
+order by title
+limit 5 offset 5;
+```
+
+![alt text](image-6.png)
+
+1. List all the Canadian cities and their populations
+
+```sql
+SELECT city, population FROM North_american_cities where country = 'Canada';
+```
+
+2. Order all the cities in the United States by their latitude from north to south
+
+```sql
+
+select city from North_american_cities where country= 'United States' order by latitude desc
+```
+
+3. List all the cities west of Chicago, ordered from west to east
+
+```sql
+select city from North_american_cities where longitude < (select longitude from North_american_cities where city= 'Chicago') order by
+longitude asc ;
+```
+
+4. List the two largest cities in Mexico (by population)
+
+```sql
+select city from North_american_cities where country = 'Mexico' order by population desc limit 2;
+```
+
+5. List the third and fourth largest cities (by population) in the United States and their population
+
+select city from North_american_cities
+where country = 'United States'
+order by population desc
+limit 2 offset 2;
+
+![alt text](image-7.png)
