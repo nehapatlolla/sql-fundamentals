@@ -1,5 +1,7 @@
 Database software is software that is designed to create databases and to store, manage, search, and extract the information contained within them.
 
+The software also handles data storage, backup and reporting, multi-access control, and security.
+
 # What is database?
 
 - Database is a software which is used to store the data
@@ -31,7 +33,7 @@ Database software is software that is designed to create databases and to store,
 
 Windows and Mac!!! has the problem i.e we are paying the licensce fee, sql cannot be runned on linux
 
-Most used Os is Linux
+> Most used Os is Linux
 
 - free
 - open source - boat sink example, if boat has the hole , everyone die so it is their responsibility for all to solve the problem
@@ -105,4 +107,13 @@ Instead of the HDD people are using the SSD because hdd is slow.
 | MySQL, PostgreSQL, SQL Server                        | MongoDB, Cassandra, Redis, Couchbase                                             |
 | ACID (Atomicity, Consistency, Isolation, Durability) | Eventual Consistency (May sacrifice consistency for performance and scalability) |
 
+|
+
 ![alt text](image-1.png)
+
+![alt text](image-8.png)
+
+![alt text](image-9.png)
+![alt text](image-10.png)
+![alt text](image-11.png)
+![alt text](image-12.png)
