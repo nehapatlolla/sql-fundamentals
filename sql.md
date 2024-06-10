@@ -8,6 +8,8 @@ Database software is software that is designed to create databases and to store,
 - Amazon leads $100 billion cloud market
 - Netflix is using AWS
 
+## Why we should not buy?
+
 1. high initial cost
 2. storage space
 3. Ac
@@ -23,7 +25,7 @@ Database software is software that is designed to create databases and to store,
 
 2. Some disasters we cant avoid so we keep the back up.
 
-3. keep the data where it is safe it might be the other country also
+3. keep the back up data where it is safe it might be the other country also
 
 4. We cannot go and ask for backup in the other countries , so we use MNC's, Mncs can ask for backup or rent.
 
@@ -33,3 +35,57 @@ Most used Os is Linux
 
 - free
 - open source - boat sink example, if boat has the hole , everyone die so it is their responsibility for all to solve the problem
+- secure- fixes the bug
+- smaller footprint - lesser ram you use, lesser money
+
+distrose
+
+## scaling
+
+Scaling, in simple terms, refers to the ability of a system, service, or application to handle an increasing amount of work or traffic as demand grows, without breaking or becoming slow or unstable.
+
+vertical scaling: More ram, CPU power,storage space, network bandwidth
+
+Vertical scaling involves adding more resources (such as upgrading hardware components) to an existing system to increase its capacity
+
+Horizontal: Adding more computers
+
+Horizontal scaling involves adding more instances or copies of a system to distribute the workload across multiple machines.
+
+Offices uses which ever is cheaper.
+
+The choice in the office between vertical and horizontal scaling depends on factors such as the nature of the workload, budget constraints, existing infrastructure, and scalability requirements.
+
+### Autoscaling
+
+Autoscaling solves this problem by `automatically adjusting the number of servers ` or resources allocated to your website based on real-time demand. When traffic increases, autoscaling automatically adds more servers or resources to handle the load. And when traffic decreases, it removes unnecessary servers or resources to save costs.
+
+### how will you go bankrupt, if autoscaling is on?
+
+DDoS Attack:
+
+Identify ddos:
+
+1. filtering
+2. captcha
+3.
+
+Divert the flow
+
+## Database why?
+
+ram is temporary , volatile
+
+hard disk is permanent , slow
+
+if people are demanding the data more keep the copy in the ram.
+
+In that case reading speed increases.
+
+if we open the game, it loads because, it copies the data from the hard disk to ram.
+
+Bottleneck is HDD
+
+instead of the HDD people are using the SSD.
+
+![alt text](image.png)
