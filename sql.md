@@ -166,3 +166,23 @@ We wont mess up the data
 #### 1NF
 
 ![alt text](image-14.png)
+
+![alt text](image-15.png)
+
+composite key--> combining two colimns to make it a primary key
+
+#### 2NF
+
+![alt text](image-16.png)
+
+data is not safe here, its inconsistant,
+it becomes updation anomaly
+
+Avoiding this problem
+
+![alt text](image-17.png)
+
+Deletion Anomaly:
+If we want to remove two columns of trev other two
+
+Each non key attribute must be entirely dependent on the entire primary key in the 2NF
