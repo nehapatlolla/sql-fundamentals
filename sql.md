@@ -10,6 +10,8 @@ The software also handles data storage, backup and reporting, multi-access contr
 - Amazon leads $100 billion cloud market
 - Netflix is using AWS
 
+not cloud providers- google drive, one drive, drop box,
+
 ## Why we should not buy?
 
 1. high initial cost
@@ -40,7 +42,7 @@ Windows and Mac!!! has the problem i.e we are paying the licensce fee, sql canno
 - secure- fixes the bug
 - smaller footprint - lesser ram you use, lesser money
 
-distrose
+distrose- alpine 256mb where as windows is 40gb
 
 ## Scaling
 
@@ -62,6 +64,8 @@ distrose
 
 Autoscaling solves this problem by `automatically adjusting the number of servers  or resources` allocated to your website based on real-time demand. When traffic increases, autoscaling automatically adds more servers or resources to handle the load. And when traffic decreases, it removes unnecessary servers or resources to save costs.
 
+when load is mre than 80 % aws decides to add an other pc
+
 ### how will you go bankrupt, if autoscaling is on?
 
 DDoS Attack:
@@ -73,6 +77,8 @@ Identify ddos:
 3. ip address filtering
 
 Divert the flow
+
+when the slow attacks happen, server always does request time out, set the time limit
 
 ## Database why?
 
@@ -102,8 +108,9 @@ Instead of the HDD people are using the SSD because hdd is slow.
 ## SQL vs NO SQL
 
 | Relational (Tables with Rows and Columns)            | Columns) Various (Document, Key-Value, Columnar, Graph, etc.)                    |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------- |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------- | --- |
 | Complex Queries, Transactions, Structured Data       | High Volume, High Velocity, Unstructured or Semi-Structured Data                 |
+| tabular format                                       | no tables                                                                        |     |
 | MySQL, PostgreSQL, SQL Server                        | MongoDB, Cassandra, Redis, Couchbase                                             |
 | ACID (Atomicity, Consistency, Isolation, Durability) | Eventual Consistency (May sacrifice consistency for performance and scalability) |
 
@@ -117,3 +124,45 @@ Instead of the HDD people are using the SSD because hdd is slow.
 ![alt text](image-10.png)
 ![alt text](image-11.png)
 ![alt text](image-12.png)
+
+> " % "----->
+> "\_" ------>
+> "="------>
+> "LIKE" ------>
+> "distinct"------> duplicate rows will be identified
+
+### Why we should not use duplicate values in tables and why use joins?
+
+> Inconsistency in data, one is updated and one is not updated, when sql crashes
+
+> Avoid the anomaly
+
+> Storage
+
+## Keys
+
+- Primary key
+
+> Unique values
+
+> cannot be null
+
+> only one primary key in a table, no other columns can be the primary key
+
+- Foreign key
+
+> A foreign key in a database is a column or set of columns in one table that references the primary key in another table. It establishes a relationship between the two tables.
+
+### Normalization
+
+In a database, normalization involves organizing data into separate tables, each focusing on a specific type of information. This reduces redundancy and ensures that each piece of data is stored in one place only, making it easier to manage and preventing errors.
+
+> SAFETY
+
+reduce the anomaly
+
+We wont mess up the data
+
+#### 1NF
+
+![alt text](image-14.png)
