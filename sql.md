@@ -155,7 +155,7 @@ Instead of the HDD people are using the SSD because hdd is slow.
 
 ### Normalization
 
-In a database, normalization involves organizing data into separate tables, each focusing on a specific type of information. This reduces redundancy and ensures that each piece of data is stored in one place only, making it easier to manage and preventing errors.
+In a database, normalization involves organizing data into separate tables, each focusing on a specific type of information. This reduces redundancy and ensures that each piece of data is stored in one place only, making it easier to manage and preventing errors, reduce anamolies, increase the safety.
 
 > SAFETY
 
@@ -185,4 +185,20 @@ Avoiding this problem
 Deletion Anomaly:
 If we want to remove two columns of trev other two
 
-Each non key attribute must be entirely dependent on the entire primary key in the 2NF
+Each non key attribute must be dependent on the `entire` primary key in the 2NF
+
+it should be in first normal form and second normal form
+
+#### 3NF
+
+lesser updates more safer data
+
+![alt text](image-18.png)
+
+there shouldnot be any dependency between the non key attributes
+
+## JOINS
+
+![alt text](image-19.png)
+
+we always compare primary key to foreign key in joins

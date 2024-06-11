@@ -1,25 +1,31 @@
+## Excercise 1
+
 1. Find the title of each film
 
 ```sql
-SELECT title FROM movies;
+SELECT title
+FROM movies;
 ```
 
 2. Find the director of each film
 
 ```sql
-SELECT director FROM movies;
+SELECT director
+FROM movies;
 ```
 
 3. Find the title and director of each film ✓
 
 ```sql
-SELECT title , director  FROM movies;
+SELECT title , director
+FROM movies;
 ```
 
 4. Find the title and year of each film
 
 ```sql
-SELECT title , year  FROM movies;
+SELECT title , year
+FROM movies;
 SELECT * FROM movies;
 ```
 
@@ -32,7 +38,7 @@ SELECT * FROM movies;
 
 ![alt text](image-3.png)
 
-Excercise 2
+## Excercise 2
 
 1.Find the movie with a row id of 6
 
@@ -58,41 +64,50 @@ where year not between 2000 and 2010;
 4.Find the first 5 Pixar movies and their release year
 
 ```sql
-SELECT title, year FROM movies
+SELECT title, year
+FROM movies
 WHERE year <= 2003;
 ```
 
 ![alt text](image-4.png)
 
-Excercise 3
+## Excercise 3
 
 1.Find all the Toy Story movies
 
 ```sql
-SELECT title FROM movies where title LIKE "Toy Story%";
+SELECT title
+FROM movies
+where title LIKE "Toy Story%";
 ```
 
 2. Find all the movies directed by John Lasseter
 
 ```sql
-SELECT title FROM movies where director LIKE "john lasseter";
+SELECT title
+FROM movies
+where director LIKE "john lasseter";
 ```
 
 3. Find all the movies (and director) not directed by John Lasseter
 
 ```sql
-SELECT title, director FROM movies where director not LIKE "john lasseter";
+SELECT title, director
+FROM movies
+where director not LIKE "john lasseter";
 ```
 
 4. Find all the WALL-\* movies
 
 ```sql
-select title from movies where title LIKE "WALL-%"
+select title
+from movies
+where title LIKE "WALL-%"
 ```
 
 ![alt text](image-5.png)
 
-Excercise 4
+## Excercise 4
 
 1. List all directors of Pixar movies (alphabetically), without duplicates
 
@@ -132,52 +147,70 @@ limit 5 offset 5;
 
 ![alt text](image-6.png)
 
+## Excercise 5
+
 1. List all the Canadian cities and their populations
 
 ```sql
-SELECT city , population FROM North_american_cities where country = 'Canada';
+SELECT city , population
+FROM North_american_cities
+where country = 'Canada';
 ```
 
 2. Order all the cities in the United States by their latitude from north to south
 
 ```sql
 
-select city from North_american_cities where country= 'United States' order by latitude desc
+select city
+from North_american_cities
+where country= 'United States'
+order by latitude desc
 ```
 
 3. List all the cities west of Chicago, ordered from west to east
 
 ```sql
-select city from North_american_cities where longitude < (select longitude from North_american_cities where city= 'Chicago') order by
+select city
+from North_american_cities
+where longitude < (select longitude from North_american_cities where city= 'Chicago')
+order by
 longitude asc ;
 ```
 
 ```sql
-select * from North_american_cities where longitude < -87.5333
+select * from North_american_cities
+where longitude < -87.5333
 order by longitude asc;
 ```
 
 4. List the two largest cities in Mexico (by population)
 
 ```sql
-select city from North_american_cities where country = 'Mexico' order by population desc limit 2;
+select city
+from North_american_cities
+where country = 'Mexico'
+order by population desc limit 2;
 ```
 
 5. List the third and fourth largest cities (by population) in the United States and their population
 
+```sql
 select city from North_american_cities
 where country = 'United States'
 order by population desc
 limit 2 offset 2;
+```
 
 ![alt text](image-7.png)
 
-Excercise 6
+## Excercise 6
 
 1.Find the domestic and international sales for each movie
 
 ```sql
-SELECT * from Movies inner join Boxoffice on Movies.id= Boxoffice.Movie_id;
+SELECT * from Movies
+inner join Boxoffice
+on Movies.id= Boxoffice.Movie_id;
 ```
 
 2.Show the sales numbers for each movie that did better internationally rather than domestically
@@ -200,3 +233,171 @@ order by Rating desc
 ```
 
 ![alt text](image-13.png)
+
+## Excercise 7
+
+1.Find the list of all buildings that have employees
+
+```sql
+SELECT distinct Building_name
+from Buildings
+join Employees
+on Buildings.Building_name= Employees.Building;
+
+```
+
+2. Find the list of all buildings and their capacity
+
+```sql
+select * from Buildings
+```
+
+3. List all buildings and the distinct employee roles in each building (including empty buildings)
+
+```sql
+select  distinct Building_name, Role
+from Buildings
+left join Employees
+on Building_name =Building;
+```
+
+![alt text](image-20.png)
+
+## Excercise 8
+
+1. Find the name and role of all employees who have not been assigned to a building
+
+```sql
+select Name, Role
+from Employees
+where Building is null;
+
+```
+
+2. Find the names of the buildings that hold no employees
+
+```sql
+select * from Buildings
+left join Employees
+on Building=Building_name
+where Name is null;
+
+```
+
+![alt text](image-21.png)
+
+## Excercise 9
+
+1.List all movies and their combined sales in millions of dollars
+
+```sql
+select Title,  (Domestic_sales + International_sales) /1000000
+as combined
+from Boxoffice
+inner join Movies
+on Id = Movie_id;
+```
+
+2. List all movies and their ratings in percent
+
+```sql
+select Title, (Rating)*10
+from Movies
+inner join Boxoffice
+on id= Movie_id;
+```
+
+3. List all movies that were released on even number years
+
+```sql
+select Title
+from Movies
+where Year %2==0;
+```
+
+![alt text](image-23.png)
+
+## Excercise 10
+
+1. Find the longest time that an employee has been at the studio
+
+```sql
+
+SELECT MAX(Years_employed)
+FROM Employees
+WHERE Years_employed ;
+```
+
+2. For each role, find the average number of years employed by employees in that role
+
+```sql
+SELECT Role, AVG(Years_Employed) AS AvgYearsEmployed
+FROM Employees
+GROUP BY Role;
+```
+
+3.Find the total number of employee years worked in each building
+
+```sql
+select Building, SUM(Years_employed)
+from Employees
+group by Building
+
+```
+
+![alt text](image-24.png)
+
+## Excercise 11
+
+1. Find the number of Artists in the studio (without a HAVING clause)
+
+```sql
+SELECT Count(Role)
+FROM employees
+where Role= "Artist";
+```
+
+2. Find the number of Employees of each role in the studio
+
+```sql
+select Role, count(Years_employed)as count
+from Employees
+where Years_employed
+group by Role;
+```
+
+3. Find the total number of years employed by all Engineers
+
+```sql
+
+select Role , sum(Years_employed) as sum
+from Employees
+where Role Like "Engineer"
+```
+
+![alt text](image-25.png)
+
+## Excercise 12
+
+1. Find the number of movies each director has directed
+
+```sql
+select Director, count(Director)
+as count
+from Movies
+group by Director;
+```
+
+2. Find the total domestic and international sales that can be attributed to each director
+
+```sql
+select distinct Director, (Domestic_sales+International_sales) as com
+from Movies
+inner join Boxoffice
+on id = Movie_id
+group by Director;
+```
+
+![alt text](image-26.png)
+
+## Excercise 13
