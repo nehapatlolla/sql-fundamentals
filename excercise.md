@@ -135,7 +135,7 @@ limit 5 offset 5;
 1. List all the Canadian cities and their populations
 
 ```sql
-SELECT city, population FROM North_american_cities where country = 'Canada';
+SELECT city , population FROM North_american_cities where country = 'Canada';
 ```
 
 2. Order all the cities in the United States by their latitude from north to south
@@ -152,6 +152,11 @@ select city from North_american_cities where longitude < (select longitude from 
 longitude asc ;
 ```
 
+```sql
+select * from North_american_cities where longitude < -87.5333
+order by longitude asc;
+```
+
 4. List the two largest cities in Mexico (by population)
 
 ```sql
@@ -166,3 +171,32 @@ order by population desc
 limit 2 offset 2;
 
 ![alt text](image-7.png)
+
+Excercise 6
+
+1.Find the domestic and international sales for each movie
+
+```sql
+SELECT * from Movies inner join Boxoffice on Movies.id= Boxoffice.Movie_id;
+```
+
+2.Show the sales numbers for each movie that did better internationally rather than domestically
+
+```sql
+select title, Domestic_sales, International_sales
+from Boxoffice
+inner join Movies
+on Movies.id = Boxoffice. Movie_id
+where International_sales > Domestic_sales;
+```
+
+3. List all the movies by their ratings in descending order
+
+```sql
+select Title, Rating from Boxoffice
+inner join Movies
+on Movies.id = Boxoffice.Movie_id
+order by Rating desc
+```
+
+![alt text](image-13.png)
