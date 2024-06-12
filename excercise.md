@@ -466,3 +466,59 @@ where Director = "Andrew Stanton";
 ```
 
 ![alt text](image-29.png)
+
+## Excercise 16
+
+1. Create a new table named Database with the following columns:
+   – Name A string (text) describing the name of the database
+   – Version A number (floating point) of the latest version of this database
+   – Download_count An integer count of the number of times this database was downloaded
+   This table has no constraints.
+
+```sql
+create table Database(
+Name text,
+Version Float,
+Download_count Integer)
+```
+
+![alt text](image-30.png)
+
+## Excercise 17
+
+1. ercise 17 — Tasks
+   Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+
+```sql
+alter table Movies
+add Aspect_ratio Float;
+```
+
+2. Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+
+```sql
+alter table Movies
+add Language Text
+default "English";
+```
+
+![alt text](image-31.png)
+
+## Excercise 18
+
+1. We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+
+```sql
+Drop table Movies;
+```
+
+2. And drop the BoxOffice table as well
+
+```sql
+
+drop table BoxOffice;
+```
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
