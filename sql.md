@@ -126,9 +126,12 @@ Instead of the HDD people are using the SSD because hdd is slow.
 ![alt text](image-12.png)
 
 > " % "----->
+
 > "\_" ------>
+
 > "="------>
-> "LIKE" ------>
+
+> "LIKE"------>
 > "distinct"------> duplicate rows will be identified
 
 ### Why we should not use duplicate values in tables and why use joins?
@@ -202,3 +205,13 @@ there shouldnot be any dependency between the non key attributes
 ![alt text](image-19.png)
 
 we always compare primary key to foreign key in joins
+
+To view the result we need to join.
+
+Every position, every place, in question if they ask every use `group by`
+
+when ever we want to drill down to the next session we use group by
+
+###### Aggregation = visualization purposes
+
+> **Where and Having** difference is we cannot use Where after group by function, so we use the having function.

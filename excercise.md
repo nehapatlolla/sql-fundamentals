@@ -373,6 +373,8 @@ group by Role;
 select Role , sum(Years_employed) as sum
 from Employees
 where Role Like "Engineer"
+
+//where role = "Engineer"
 ```
 
 ![alt text](image-25.png)
@@ -401,3 +403,66 @@ group by Director;
 ![alt text](image-26.png)
 
 ## Excercise 13
+
+1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+
+```sql
+
+insert into Movies( Id, Title, Director, Year, Length_minutes)
+Values( 4, "Toy Story 4", "Neha Reddy", 2024, 120);
+```
+
+2. Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+
+```sql
+insert into Boxoffice(Movie_Id, Rating,Domestic_sales,International_sales)
+values (4, 8.7, 340*1000000, 270*1000000)
+```
+
+![alt text](image-27.png)
+
+## Excercise 14
+
+1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+
+```sql
+update Movies
+set Director = "John Lasseter"
+where Title = "A Bug's Life";
+```
+
+2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+
+```sql
+update Movies
+set Year= 1999
+where Title = "Toy Story 2"
+```
+
+3. Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+
+```sql
+update Movies
+set Director = "Lee Unkrich", Title= "Toy Story 3"
+where Title = 'Toy Story 8';
+```
+
+![alt text](image-28.png)
+
+## Excercise 15
+
+1. This database is getting too big, lets remove all movies that were released before 2005.
+
+```sql
+delete from Movies
+where year < 2005;
+```
+
+2. Andrew Stanton has also left the studio, so please remove all movies directed by him.
+
+```sql
+delete from Movies
+where Director = "Andrew Stanton";
+```
+
+![alt text](image-29.png)
