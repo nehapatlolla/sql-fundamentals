@@ -426,12 +426,28 @@ values (4, 8.7, 340*1000000, 270*1000000)
 1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
 
 ```sql
+select * from Movies
+where id =2
+update Movies
+set Director = "John Lasseter"
+where Title = "A Bug's Life"
+```
+
+```sql
 update Movies
 set Director = "John Lasseter"
 where Title = "A Bug's Life";
 ```
 
 2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+
+```sql
+select * from Movies
+where id =3
+update Movies
+set Year= 1999
+where Title = "Toy Story 2"
+```
 
 ```sql
 update Movies
@@ -452,6 +468,11 @@ where Title = 'Toy Story 8';
 ## Excercise 15
 
 1. This database is getting too big, lets remove all movies that were released before 2005.
+
+```sql
+select * from Movies
+
+```
 
 ```sql
 delete from Movies
