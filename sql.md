@@ -240,6 +240,40 @@ when ever we want to drill down to the next session we use group by
 
 > blob-- to store large binary data, such as images, videos, audio files, and other multimedia objects. never store in blob store in file system.
 
+1. INT (Integer):
+
+- Storage: Typically occupies 4 bytes (32 bits) of storage space.
+- Range: The range of values for an INT is from -2,147,483,648 to 2,147,483,647.
+- Commonly used for storing integers within a moderate range.
+
+2. SMALLINT (Small Integer):
+
+- Storage: Typically occupies 2 bytes (16 bits) of storage space.
+- Range: The range of values for a SMALLINT is from -32,768 to 32,767.
+- Used when you know that the values stored in the column will be within a smaller range compared to INT.
+
+3. BIGINT (Big Integer):
+
+- Storage: Typically occupies 8 bytes (64 bits) of storage space.
+- Range: The range of values for a BIGINT is from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.
+- Used when you need to store very large integer values that exceed the range of INT.
+
+1. VARCHAR:
+
+- Stands for "Variable Character."
+- Stores character data using the database's default character encoding, which is typically a single-byte character set such as ASCII or UTF-8.
+- Suitable for storing non-Unicode character data when the application or database primarily deals with single-byte character sets.
+
+2. NVARCHAR:
+
+- Stands for "Variable Character."
+- Stores Unicode character data using the UTF-16 encoding, which allows it to support a wider range of characters including international characters, symbols, and emojis.
+- Useful when you need to store data in multiple languages or when working with applications that require Unicode support.
+
+1. decimal , float
+
+![alt text](image-35.png)
+
 ### constraints
 
 1. Primary key
