@@ -215,3 +215,43 @@ when ever we want to drill down to the next session we use group by
 ###### Aggregation = visualization purposes
 
 > **Where and Having** difference is we cannot use Where after group by function, so we use the having function.
+
+### Data types
+
+> integer
+
+> boolean
+
+> float
+
+> double
+
+> real
+
+> character(num_chars)-- Fixed length, padded with spaces if needed.
+
+> varchar(num_chars)-- Variable length, more space-efficient for shorter strings.
+
+> text--Variable length without maximum limit, suitable for longer strings., paragraphs
+
+> date
+
+> datetime
+
+> blob-- to store large binary data, such as images, videos, audio files, and other multimedia objects. never store in blob store in file system.
+
+### constraints
+
+1. Primary key
+
+- uniquely identifies each record in a table
+- not null
+- only be one primary key constraint per table.
+
+2. Auto increment - You dont to give an id , automatically increases the
+
+3. Foreign key- even if foreign key constraint is not there we can join tables why foreign key??
+
+first delete the foreign key and then you can delete the primary key
+when you want to insert a new row in the table foreign key helps to solve the error which has occured when the insertion happens
+![new](image-34.png)
