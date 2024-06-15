@@ -272,6 +272,8 @@ when ever we want to drill down to the next session we use group by
 
 1. decimal , float
 
+depricated- outdated
+
 ![alt text](image-35.png)
 
 ### constraints
@@ -284,8 +286,15 @@ when ever we want to drill down to the next session we use group by
 
 2. Auto increment - You dont to give an id , automatically increases the
 
-3. Foreign key- even if foreign key constraint is not there we can join tables why foreign key??
+3. unique
+
+4. Not null
+
+5. Foreign key- even if foreign key constraint is not there we can join tables why foreign key??
 
 first delete the foreign key and then you can delete the primary key
-when you want to insert a new row in the table foreign key helps to solve the error which has occured when the insertion happens
+when you want to insert a new row in the table, first insert in a primary key, foreign key helps to solve the error which has occured when the insertion happens
+
+increasing the data safety
+
 ![new](image-34.png)
