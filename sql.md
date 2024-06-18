@@ -298,3 +298,73 @@ when you want to insert a new row in the table, first insert in a primary key, f
 increasing the data safety
 
 ![new](image-34.png)
+
+## multi level groupy
+
+## set operstions in grouping
+
+1. Union all doesnt know what columns it is combining it just combines the columns,
+2. grouping sets
+
+## cube vs rollup
+
+![alt text](image-36.png)
+
+- # cube
+
+- it is diff from the roll up in a way that, it groups by region first and then second it groups by the product_type, and then it takes the combine values
+  and in grouping sets it gives the grand total , sum of the all rows
+
+- 2^ n combinations if n= no of columns
+- ## rollup
+
+- rollup groups by first as one column and then it groups by the both other columns
+- here first time it groups by the region and then region, product_type
+
+- if you give the n columns it gives the n+1 columns
+
+## Rank
+
+- Rank
+
+> ```sql
+> RANK ( ) OVER ( [ partition_by_clause ] order_by_clause )
+> ```
+
+- Row_number
+
+- Dense
+
+> This function returns the rank of each row within a result set partition, with no gaps in the ranking values. The rank of a specific row is one plus the number of distinct rank values that come before that specific row.
+
+```sql
+DENSE_RANK() over ([partition by '   ' order by '     '])
+```
+
+- Ntile
+
+## Why design
+
+- to bring everyone on same page( developers)
+- idea
+- multiple variants of the same design
+
+## Er diagrams
+
+| TransactionID | Date | ProductName | Category | Price | StoreName | City | Country |
+
+|---------------|------------|-------------|-----------|-------|-----------|------------|---------|
+
+| 1 | 2024-04-01 | Laptop | Electronics | 1200 | TechWorld | San Francisco | USA |
+
+| 2 | 2024-04-01 | Smartphone | Electronics | 800 | TechWorld | San Francisco | USA |
+
+| 3 | 2024-04-02 | Jeans | Apparel | 40 | FashionFiesta | New York | USA |
+
+![alt text](image-37.png)
+
+![alt text](image-40.png)
+
+![alt text](image-38.png)
+
+![alt text](image-39.png)
