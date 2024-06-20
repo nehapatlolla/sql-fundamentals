@@ -368,3 +368,116 @@ DENSE_RANK() over ([partition by '   ' order by '     '])
 ![alt text](image-38.png)
 
 ![alt text](image-39.png)
+
+## XML
+
+![alt text](image-42.png)
+
+```xml
+
+SELECT *
+
+FROM Movies
+
+FOR XML Auto
+```
+
+```xml
+
+SELECT *
+
+FROM Movies
+
+FOR XML Path
+
+
+SELECT
+
+MovieId,
+
+Title,
+
+[Year],
+
+DirectorId
+
+FROM Movies
+
+FOR XML Path
+
+SELECT
+
+	MovieId,
+
+	Title,
+
+	[Year],
+
+	DirectorId
+
+FROM Movies
+
+FOR XML Path ('Movie')
+
+
+SELECT
+
+	MovieId,
+
+	Title,
+
+	[Year],
+
+	DirectorId
+
+FROM Movies
+
+FOR XML Path ('Movie'), Root
+
+
+SELECT
+
+	MovieId,
+
+	Title,
+
+	[Year],
+
+	DirectorId
+
+FROM Movies
+
+FOR XML Path ('Movie'), Root('Movies')
+
+SELECT
+
+	MovieId as [@MovieId], -- attribute
+
+	Title as [MovieInfo/Title], -- nesting xml
+
+	[Year] as [MovieInfo/Year],
+
+	DirectorId
+
+FROM Movies
+
+FOR XML Path ('Movie'), Root('Movies')
+```
+
+## JSON
+
+There is no attribute in json
+
+![alt text](image-43.png)
+
+![alt text](image-44.png)
+
+![alt text](image-45.png)
+
+candidate key-- capability to become the primary key
+
+alternate key-- which can be the next primary key
+
+Super key-- primary key + any other alternate key is the super key
+
+![alt text](image-46.png)
