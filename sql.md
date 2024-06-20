@@ -481,3 +481,14 @@ alternate key-- which can be the next primary key
 Super key-- primary key + any other alternate key is the super key
 
 ![alt text](image-46.png)
+
+### user defined in functions
+
+declaring in the sql
+
+```sql
+declare @movieid int;
+set movieid=3;
+
+declare @movieid int = 5
+```
