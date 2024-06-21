@@ -284,7 +284,7 @@ depricated- outdated
 - not null
 - only be one primary key constraint per table.
 
-2. Auto increment - You dont to give an id , automatically increases the
+2. Auto increment - You dont to give an id , automatically increases the next row, in sql server we use identity(1,1)
 
 3. unique
 
@@ -372,97 +372,6 @@ DENSE_RANK() over ([partition by '   ' order by '     '])
 ## XML
 
 ![alt text](image-42.png)
-
-```xml
-
-SELECT *
-
-FROM Movies
-
-FOR XML Auto
-```
-
-```xml
-
-SELECT *
-
-FROM Movies
-
-FOR XML Path
-
-
-SELECT
-
-MovieId,
-
-Title,
-
-[Year],
-
-DirectorId
-
-FROM Movies
-
-FOR XML Path
-
-SELECT
-
-	MovieId,
-
-	Title,
-
-	[Year],
-
-	DirectorId
-
-FROM Movies
-
-FOR XML Path ('Movie')
-
-
-SELECT
-
-	MovieId,
-
-	Title,
-
-	[Year],
-
-	DirectorId
-
-FROM Movies
-
-FOR XML Path ('Movie'), Root
-
-
-SELECT
-
-	MovieId,
-
-	Title,
-
-	[Year],
-
-	DirectorId
-
-FROM Movies
-
-FOR XML Path ('Movie'), Root('Movies')
-
-SELECT
-
-	MovieId as [@MovieId], -- attribute
-
-	Title as [MovieInfo/Title], -- nesting xml
-
-	[Year] as [MovieInfo/Year],
-
-	DirectorId
-
-FROM Movies
-
-FOR XML Path ('Movie'), Root('Movies')
-```
 
 ## JSON
 
