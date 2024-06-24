@@ -401,3 +401,55 @@ set movieid=3;
 
 declare @movieid int = 5
 ```
+
+## views
+
+- virtual tables
+- view helps in readability
+
+- 1. complex statement - create view- Easily readability
+- 2. Abstraction- users can easily use who dont know what are multiple joins we can create views and give it to them as views to understand
+- 3. security-- some confidential columns are hidden and those cannot be accesed directly by the user , so we give the views which doesn't contain any hidden data and have access to only the view.
+
+## functions
+
+In functions we can modify only which are declared inside the function
+
+### scalar functions
+
+> where can i use the scalar functions?
+> Ans: Wherever we use the aggregation function , we can give the column name, or the values
+
+- @ says it is a variable
+
+- Scalar functions can be used almost anywhere in T-SQL statements.
+- Scalar functions accept one or more parameters but return only one -value, therefore, they must include a RETURN statement.
+- Scalar functions can use logic such as IF blocks or WHILE loops.
+- Scalar functions cannot update data. They can access data but this is not a good practice.
+- Scalar functions can call other functions.
+
+### inline table valued functions
+
+- TVFs can be used after the FROM clause in the SELECT statements so that we can use them just like a table in the queries.
+
+> Points to Remember:
+
+1. We specify TABLE as the Return Type instead of any scalar data type.
+2. The function body is not closed between BEGIN and END blocks. This is because the function is going to return a single select statement.
+3. The structure of the Table that is going to be returned is determined by the select statement used in the function.
+
+### Multi-statement table value function
+
+## stored procedures
+
+## indexes
+
+![alt text](image-47.png)
+
+insertion happens more in Gpay, Stock market
+
+Sql is neutral, both reading and retrieving
+
+Indexing is a way to increase the speed
+
+## ACID
