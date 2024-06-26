@@ -269,7 +269,7 @@ EXEC UpdateEmployeeInfo1 @EmployeeID = 4,
     @NewSalary = 135000
 
 
-drop procedure UpdateEmployeeInfo
+-- drop procedure UpdateEmployeeInfo
 select *
 from employees
 
