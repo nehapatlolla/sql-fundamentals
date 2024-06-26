@@ -304,7 +304,7 @@ increasing the data safety
 ## set operstions in grouping
 
 1. Union all doesnt know what columns it is combining it just combines the columns,
-2. grouping sets
+2. grouping sets combines all the group by in multiple queries. when we tnt these particular combinations we use grouping sets
 
 ## cube vs rollup
 
@@ -319,7 +319,7 @@ increasing the data safety
 - ## rollup
 
 - rollup groups by first as one column and then it groups by the both other columns
-- here first time it groups by the region and then region, product_type
+- here first time it groups by the region and then region, product_type, null
 
 - if you give the n columns it gives the n+1 columns
 
@@ -332,6 +332,7 @@ increasing the data safety
 > ```
 
 - Row_number
+  highest because even if the rank is skipping if the last rank is repeating the row number is highest
 
 - Dense
 
@@ -435,10 +436,16 @@ In functions we can modify only which are declared inside the function
 > Points to Remember:
 
 1. We specify TABLE as the Return Type instead of any scalar data type.
+
 2. The function body is not closed between BEGIN and END blocks. This is because the function is going to return a single select statement.
+
 3. The structure of the Table that is going to be returned is determined by the select statement used in the function.
 
 ### Multi-statement table value function
+
+1. function requires begin and the end statements
+2. to solve the complex queries we use the mtvfs
+3.
 
 ## stored procedures
 
@@ -452,4 +459,60 @@ Sql is neutral, both reading and retrieving
 
 Indexing is a way to increase the speed
 
+I/O cost is reduced by indexing
+
 ## ACID
+
+- Atomicity--failure happens during the transaction rolls back to the start
+- consistency-- cannot have the ghost data
+- Isolation-- blocking a particular row when a person is trying to book a seat
+
+- Durability-- it is permanently saved, if failure happens after the transaction, restarting the computer should get back all the data, No missing of the data should occur.
+
+![alt text](image-48.png)
+
+user defined datatypes
+![alt text](image-49.png)
+procedure can also return something
+
+## stored procedures
+
+- when you write a query and you want to use in the multiple places
+- reduces the network traffic
+- can be easily modified
+- security
+- performance
+- reusable
+
+## Triggers
+
+One action should trigger an other ation
+
+Any kind of combinations in the one table if we do that should insert a log into the new correspnding table
+
+Any update delete etc
+![alt text](image-50.png)
+![alt text](image-51.png)
+
+inserted, deleted tables are availale in triggers, but cannot use them any where
+
+## Recap
+
+- cannot have order by inside th eviews becoz we want to select entire thing from the view, order of the table determined by clustered index, not by order
+
+- what happens if we have update command in view? it is copy by reference, yes it gets updated in the main table but why?
+  there could be multiple tables underlying, and it updates different thing not the expected one and it is wrong.
+
+- if the coulmn is not menitoned in the group by which is at the aggregate functoion it errors out becoz it dosnt know wht to group by at that condition
+
+- Grouping sets-
+- union all doesnt see whether the data is ordered or not
+
+- **rollup** and **cube** are shortforms of the grouping sets
+
+- Row_number
+  highest because even if the rank is skipping if the last rank is repeating the row number is highest
+
+- GROUP BY: Aggregates rows based on common attribute values, typically used with aggregate functions like SUM, COUNT, etc., to summarize data across groups.
+
+- PARTITION BY: Divides the result set into partitions to which an analytic function is applied separately, allowing for ranking, row numbering, and other operations within each partition independently.
