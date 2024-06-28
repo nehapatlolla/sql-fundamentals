@@ -73,6 +73,9 @@ from Employees
 -- drop table Employees
 -- drop table Departments
 --drop table transfers
+
+
+
 --Task - 1
 --Check if the department exist first if no then error 'No such Department exists' if yes then commit the changes
 -- go
@@ -114,6 +117,7 @@ Begin
     from Departments
     where DepartmentID=@DepartmentID)
         THROW 5000, 'department is not present',1
+        -- when throw happens it comes to catch block
 -- shield
              insert into Employees
     values
@@ -333,3 +337,5 @@ from transfers
 
 
 select coalesce(null, null, 'first', 'Hi') as firstnonnullvalue
+
+create database studentTasks

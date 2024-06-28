@@ -453,6 +453,11 @@ In functions we can modify only which are declared inside the function
 
 ![alt text](image-47.png)
 
+1. clustered index
+2. Non clustered index
+
+Clustered index is by default primary key and specifies the row order,
+
 insertion happens more in Gpay, Stock market
 
 Sql is neutral, both reading and retrieving
@@ -483,6 +488,8 @@ procedure can also return something
 - security
 - performance
 - reusable
+
+## difference between views, functions and stored procedures
 
 ## Triggers
 
